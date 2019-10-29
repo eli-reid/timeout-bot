@@ -2,12 +2,11 @@ import pandas as pd
 import mysql.connector as dbconnect
 import json 
 
-
 def main ():
+   
     chatData=pd.DataFrame(data=pd.read_csv('ChatLog.csv'))
-    print(chatData['ChatMsg'])
+    chatDataStr=chatData['ChatMsg'].to_json(  )
     chatWordList=makeWordDictList(chatData['ChatMsg'].tolist())
-    
     timeoutData=pd.DataFrame(data=pd.read_csv('ChatTimeout.csv'))
     timeoutWordList=makeWordDictList(timeoutData['Msgs'].tolist())
     return
@@ -32,10 +31,10 @@ def makeWordDictList(messageList):
 def getPercent(smallNum,largeNum):
     """ 
         Input: 2 numbers int or float 
-        Returns: float percent value   0 to 100 or -1 under error condition
+        Returns: float percent value   0.00 to 100.00 or -1 under error condition
     """
     try:
-        return (smallNum/largeNum)*100
+        return float((smallNum/largeNum)*100)
     except:
         return -1
 
