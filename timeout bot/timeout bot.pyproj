@@ -24,7 +24,6 @@
     <Compile Include="bottrainer.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Event.py" />
     <Compile Include="EventEmit.py" />
     <Compile Include="timeout_bot.py" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 class eventHandler(object):
     """ 
-    A simple event handler
+    Event Handler
     """
     def __init__(self):
         """
@@ -34,9 +34,10 @@ class eventHandler(object):
             func(func) - function that is called when the event is emitted
         Returns: self
         """
+        #add try statement to catch keyerror
         self._events[event].append(func)
         return self
-       
+        
     
     def register(self,eventlist):
         """ 
@@ -47,6 +48,7 @@ class eventHandler(object):
                 self._events[event]=[]
         return self 
                 
+
         
     
     def remove(self,event,func):

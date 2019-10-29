@@ -12,7 +12,8 @@ def main ():
     return
 
 def makeWordDictList(messageList):
-    """    Input: list of messages
+    """    Input: 
+                messageList (list) - list of messages (str)
            Returns: list of dictionaries {word:'word', subString:'wordBefore word wordAfter'}
            SubString length should be 1 to 3 depending on message
     """
@@ -28,7 +29,7 @@ def makeWordDictList(messageList):
     return wordList
 
 
-def getPercent(smallNum,largeNum):
+def getPercent(dividend,divisor):
     """ 
         Input: 2 numbers int or float 
         Returns: float percent value   0.00 to 100.00 or -1 under error condition
